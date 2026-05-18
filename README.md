@@ -1,0 +1,1 @@
+# hugosmp-shop
