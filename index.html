@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HugoSMP Shop</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  color:white;
+  overflow-x:hidden;
+  background:#050807;
+}
+
+/* AURORA BACKGROUND (lebendig aber kein Regenbogen) */
+.bg{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle at 20% 20%, rgba(0,255,140,0.15), transparent 40%),
+              radial-gradient(circle at 80% 30%, rgba(0,200,255,0.12), transparent 45%),
+              radial-gradient(circle at 50% 80%, rgba(140,0,255,0.10), transparent 50%);
+  animation: move 8s ease-in-out infinite alternate;
+  z-index:-2;
+}
+
+@keyframes move{
+  from{transform:scale(1) translateY(-10px);}
+  to{transform:scale(1.1) translateY(10px);}
+}
+
+/* particles */
+.p{
+  position:fixed;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#00ff88;
+  opacity:0.25;
+  animation: float 10s linear infinite;
+  z-index:-1;
+}
+
+@keyframes float{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:80px 20px;
+}
+
+h1{
+  font-family:'Orbitron', sans-serif;
+  font-size:60px;
+  color:#00ff88;
+  text-shadow:0 0 20px #00ff88, 0 0 35px rgba(0,200,255,0.4);
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse{
+  from{transform:scale(1);}
+  to{transform:scale(1.03);}
+}
+
+.subtitle{
+  color:#bbb;
+  font-size:18px;
+}
+
+/* TITLES */
+.title{
+  text-align:center;
+  font-size:28px;
+  margin-top:40px;
+  font-family:'Orbitron', sans-serif;
+  color:#00ff88;
+  text-shadow:0 0 10px #00ff88;
+}
+
+/* GRID */
+.container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:25px;
+  padding:40px;
+  max-width:1000px;
+  margin:auto;
+}
+
+/* CARDS (glass + color edge glow) */
+.card{
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  border-radius:18px;
+  padding:22px;
+
+  border:1px solid rgba(0,255,140,0.25);
+  box-shadow:
+    0 0 10px rgba(0,255,140,0.15),
+    inset 0 0 10px rgba(0,200,255,0.05);
+
+  transition:0.35s;
+  animation: fadeIn 1s ease forwards;
+  opacity:0;
+  transform:translateY(20px);
+}
+
+@keyframes fadeIn{
+  to{opacity:1; transform:translateY(0);}
+}
+
+.card:hover{
+  transform:scale(1.07);
+  box-shadow:
+    0 0 25px rgba(0,255,140,0.4),
+    0 0 40px rgba(0,200,255,0.2);
+}
+
+/* PRICE */
+.price{
+  font-size:22px;
+  font-weight:bold;
+  color:#00ff88;
+  text-shadow:0 0 10px #00ff88;
+}
+
+/* BUTTON (gradient but no rainbow) */
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-family:'Orbitron', sans-serif;
+  font-weight:bold;
+
+  background: linear-gradient(90deg, #00ff88, #00c8ff);
+  color:black;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px rgba(0,255,140,0.5);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- particles -->
+<div class="p" style="left:10%; animation-delay:0s;"></div>
+<div class="p" style="left:30%; animation-delay:2s;"></div>
+<div class="p" style="left:50%; animation-delay:4s;"></div>
+<div class="p" style="left:70%; animation-delay:1s;"></div>
+<div class="p" style="left:90%; animation-delay:3s;"></div>
+
+<header>
+<h1>⚔ HugoSMP Shop ⚔</h1>
+<p class="subtitle">Premium ausgehöhlte Farmflächen & versteckte Stashes</p>
+</header>
+
+<div class="title">🌾 AUSGEHÖHLTER PLATZ FÜR FARMEN</div>
+
+<div class="container">
+
+<div class="card">
+<h2>Small Area</h2>
+<p class="price">1M</p>
+<p>Kleiner Bereich für Starter-Farmen</p>
+<a class="btn" href="https://discord.gg/kcGJDeqWHW">Kaufen</a>
+</div>
+
+<div class="card">
+<h2>Medium Area</h2>
+<p class="price">5M</p>
+<p>Optimierter Bereich für effiziente Farms</p>
+<a class="btn" href="https://discord.gg/kcGJDeqWHW">Kaufen</a>
+</div>
+
+</div>
+
+<div class="title">📦 STASH</div>
+
+<div class="container">
+
+<div class="card">
+<h2>Hidden Stash Base</h2>
+<p class="price">1M</p>
+<p>✔ Fässer + Storage<br>✔ gut versteckt<br>✔ schwer zu finden</p>
+<a class="btn" href="https://discord.gg/kcGJDeqWHW">Kaufen</a>
+</div>
+
+</div>
+
+</body>
+</html>
